@@ -1,0 +1,114 @@
+<template>
+  <div class="sidebar">
+    <img src="@/assets/logo.png" alt="" />
+    <div class="title">ERP</div>
+    <div class="menu-items">
+      <router-link
+        to="/"
+        exact-active-class="active"
+        tag="button"
+        class="side-btn"
+      >
+        <div class="link-container">VendorSupplier</div>
+      </router-link>
+
+      <router-link
+        to="/customer"
+        active-class="active"
+        tag="button"
+        class="side-btn"
+      >
+        <div class="link-container">Customer</div>
+      </router-link>
+
+      <router-link
+        to="/purchase"
+        active-class="active"
+        tag="button"
+        class="side-btn"
+      >
+        <div class="link-container">Purchase</div>
+      </router-link>
+
+      <router-link
+        to="/sales"
+        active-class="active"
+        tag="button"
+        class="side-btn"
+      >
+        <div class="link-container">Sales</div>
+      </router-link>
+
+      <router-link
+        to="/accounts"
+        active-class="active"
+        tag="button"
+        class="side-btn"
+      >
+        <div class="link-container">Accounts</div>
+      </router-link>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style>
+.title {
+  color: white;
+  font-size: 30px;
+  letter-spacing: 1rem;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  padding: 10px;
+}
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px; /* Noted for remove */
+}
+.menu-items > * {
+  margin-top: 20px;
+}
+/*.link-container {
+  color: indigo;
+  background-color: lightblue;
+  padding: 20px 0px 20px 0px;
+  border-radius: 50px;
+  margin: 0 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}*/
+.side-btn:focus {
+  outline: none;
+}
+.side-btn.active {
+  position: relative;
+  background-color: lightblue; /* Noted for remove */
+  color: indigo; /* Noted for remove */
+  font-weight: 500;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.side-btn.active::before {
+  position: absolute;
+}
+.side-btn {
+  border: none;
+  padding: 16px 0px; /* Noted for remove */
+  cursor: pointer;
+  color: white; /* button back color */
+  font-size: 16px; /* Noted for remove */
+  background-color: transparent; /* Noted  */
+  margin: 10px 10px;
+}
+</style>

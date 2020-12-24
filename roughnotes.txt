@@ -1,0 +1,5 @@
+From App.vue 
+<div id="nav">
+    <router-link to="/">Home</router-link> <br />
+    <router-link to="/about">About</router-link>
+  </div>
