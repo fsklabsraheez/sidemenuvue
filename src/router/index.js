@@ -1,30 +1,34 @@
+/*import Vue from 'vue'  Added and removed */
+/*import VueRouter from 'vue-router' Added and removed */
 import { createRouter, createWebHistory } from 'vue-router'
-import Dashboard from '../views/Dashboard.vue'
+import dashboard from '../views/Dashboard' /*Dashboard to dashboard , removed .vue */
+
+/*Vue.use(VueRouter)  Added and removed */
 
 const routes = [
   {
     path: '/',
-      component: Dashboard,
+      component: dashboard, /* Dashboard to dashboard */
         children: [
           {
-            path: '/',
-            components: () => import(/* webpackChunkName: "vendorsupplier" */ '../views/VendorSupplier')
+            path: '', /* / removed from all path - which has no impact, and components changed to component which s d major issue,  and .vue added which is working with or without vue*/
+            component: () => import(/* webpackChunkName: "VendorSupplier" */ '../views/VendorSupplier')
           },
           {
-            path: '/customer',
-            components: () => import(/* webpackChunkName: "customer" */ '../views/Customer')
+            path: 'customer',
+            component: () => import(/* webpackChunkName: "Customer" */ '../views/Customer')
           },
           {
-            path: '/purchase',
-            components: () => import(/* webpackChunkName: "purchase" */ '../views/Purchase')
+            path: 'purchase',
+            component: () => import(/* webpackChunkName: "Purchase" */ '../views/Purchase')
           },
           {
-            path: '/sales',
-            components: () => import(/* webpackChunkName: "sales" */ '../views/Sales')
+            path: 'sales',
+            component: () => import(/* webpackChunkName: "Sales" */ '../views/Sales.vue')
           },
           {
-            path: '/accounts',
-            components: () => import(/* webpackChunkName: "accounts" */ '../views/Accounts')
+            path: 'accounts',
+            component: () => import(/* webpackChunkName: "Accounts" */ '../views/Accounts.vue')
           }
         ]
   }

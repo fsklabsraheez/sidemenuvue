@@ -9,15 +9,11 @@
         tag="button"
         class="side-btn"
       >
-        <div class="link-container">VendorSupplier</div>
+        <div class="link-container">Vendor / Supplier</div>
+        <!-- Inside above div is the menu items name-->
       </router-link>
 
-      <router-link
-        to="/customer"
-        active-class="active"
-        tag="button"
-        class="side-btn"
-      >
+      <router-link to="/customer" active-class="active" class="side-btn">
         <div class="link-container">Customer</div>
       </router-link>
 
@@ -71,12 +67,13 @@ img {
 .menu-items {
   display: flex;
   flex-direction: column;
-  margin-top: 40px; /* Noted for remove */
+  margin-top: 10px; /* Top margin of the menu items section below ERP */
 }
 .menu-items > * {
   margin-top: 20px;
 }
-/*.link-container {
+/* This content is blocked to display
+.link-container {
   color: indigo;
   background-color: lightblue;
   padding: 20px 0px 20px 0px;
@@ -85,7 +82,8 @@ img {
   font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
-}*/
+}
+*/
 .side-btn:focus {
   outline: none;
 }
@@ -93,7 +91,7 @@ img {
   position: relative;
   background-color: lightblue; /* Noted for remove */
   color: indigo; /* Noted for remove */
-  font-weight: 500;
+  font-weight: bold;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   border-top-left-radius: 20px;
@@ -110,5 +108,7 @@ img {
   font-size: 16px; /* Noted for remove */
   background-color: transparent; /* Noted  */
   margin: 10px 10px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 </style>
