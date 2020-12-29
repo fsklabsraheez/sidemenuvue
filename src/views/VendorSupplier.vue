@@ -16,7 +16,7 @@ export default {};
   height: 100%;
   width: 100%;
   font-size: 60px;
-  color: rgb(167, 167, 167);
+  color: black;
   font-weight: 600;
 }
 </style>

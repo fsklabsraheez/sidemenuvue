@@ -23,12 +23,12 @@ export default {
 .dashboard {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  background-color: indigo;
+  background-color: black;
   height: 100vh;
   width: 100vw;
 }
 .content {
-  background-color: lightblue;
+  background-color: white;
   border-radius: 20px;
   /*border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;*/

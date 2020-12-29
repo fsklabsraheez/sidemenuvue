@@ -3,20 +3,22 @@
     <img src="@/assets/logo.png" alt="" />
     <div class="title">ERP</div>
     <div class="menu-items">
-      <router-link
-        to="/"
-        exact-active-class="active"
-        tag="button"
-        class="side-btn"
-      >
+      <!-- Inside above div is the menu items name-->
+
+      <router-link to="/" exact-active-class="active" class="side-btn">
         <div class="link-container">Vendor / Supplier</div>
-        <!-- Inside above div is the menu items name-->
       </router-link>
 
       <router-link to="/customer" active-class="active" class="side-btn">
         <div class="link-container">Customer</div>
       </router-link>
-
+      <button
+        class="side-btn"
+        active-class="active"
+        @click="$router.push('purchase')"
+      >
+        Click for Purchase
+      </button>
       <router-link
         to="/purchase"
         active-class="active"
@@ -89,8 +91,8 @@ img {
 }
 .side-btn.active {
   position: relative;
-  background-color: lightblue; /* Noted for remove */
-  color: indigo; /* Noted for remove */
+  background-color: white; /* Noted for remove */
+  color: black; /* Noted for remove */
   font-weight: bold;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -104,11 +106,13 @@ img {
   border: none;
   padding: 16px 0px; /* Noted for remove */
   cursor: pointer;
-  color: white; /* button back color */
+  color: black; /* button back color */
   font-size: 16px; /* Noted for remove */
-  background-color: transparent; /* Noted  */
+  background-color: white; /* Noted  */
   margin: 10px 10px;
   text-transform: uppercase;
   font-weight: bold;
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 20px;
 }
 </style>
