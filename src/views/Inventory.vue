@@ -1,44 +1,35 @@
 <template>
   <div class="top-menu">
-    <router-link to="/" exact-active-class="active" class="menu-btn">
-      Bank Account
+    <button class="menu-btn">Product</button>
+    <button class="menu-btn">Stock</button>
+    <button class="menu-btn">Warehouse</button>
+    <!--<router-link to="/" exact-active-class="active" class="menu-btn">
     </router-link>
     <router-link to="/" exact-active-class="active" class="menu-btn">
-      Cash Account
     </router-link>
     <router-link to="/" exact-active-class="active" class="menu-btn">
-      Payable
-    </router-link>
-    <router-link to="/" exact-active-class="active" class="menu-btn">
-      Receivable
-    </router-link>
-    <router-link to="/" exact-active-class="active" class="menu-btn">
-      Income
-    </router-link>
-    <router-link to="/" exact-active-class="active" class="menu-btn">
-      Expense
-    </router-link>
+    </router-link>-->
   </div>
-  <div class="box-content"><AccountsAdd /></div>
+  <div class="box-content"><InventoryAdd /></div>
 </template>
 
 <script>
-import AccountsAdd from "../views/AccountsAdd.vue";
+import InventoryAdd from "../views/InventoryAdd.vue";
 export default {
-  components: { AccountsAdd },
+  components: { InventoryAdd },
 };
 </script>
 
-<style  scoped>
+<style scoped>
 .top-menu {
-  margin: 20px 80px 0px;
-
+  margin: 20px 150px 0px;
+  border-radius: tomer 20px;
   padding: 20px 20px;
   background-color: none;
   display: flex;
   flex-direction: row;
 }
-/*.menu-btn.active {
+.menu-btn.active {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -47,11 +38,11 @@ export default {
   background-color: rgb(0, 0, 0);
   color: blue;
   border-radius: 10px;
-}*/
+}
 
-/*.top-menu > * {
-  flex-basis: 10%;
-}*/
+.top-menu > * {
+  /*flex-basis: 10%;*/
+}
 .menu-btn {
   text-decoration: none;
   text-transform: uppercase;
