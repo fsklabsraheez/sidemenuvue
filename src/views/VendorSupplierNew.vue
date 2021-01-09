@@ -104,6 +104,18 @@
             <td>{{ row.vemail }}</td>
             <td>{{ row.vgst }}</td>
             <td>{{ row.vcreditterm }}</td>
+            <link
+              rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+            />
+            <td>
+              <button>
+                <span class="glyphicon glyphicon-edit"></span>Edit
+              </button>
+              <button>
+                <span class="glyphicon glyphicon-trash"></span> Delete
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -113,39 +125,40 @@
 
 
 <script>
-var vendorTable = new Vue({
-  el: "#vendorTable",
-  data: {
-    rows: [
-      {
-        vcode: "VC001",
-        vname: "ABC Pvt Ltd",
-        vaddress: "Trivandrum",
-        vstate: "Kerala",
-        vcontactperson: "Mr.XXX",
-        vdesig: "Manager",
-        vcnum1: "9876543219",
-        vcnum2: "0471224433",
-        vemail: "abcmanager@gmail.com",
-        vgst: "GSTIN1234567890123456",
-        vcreditterm: "Immediately",
-      },
-      {
-        vcode: "VC002",
-        vname: "XYZ Pvt Ltd",
-        vaddress: "Neyyatinkara",
-        vstate: "Kerala",
-        vcontactperson: "Mr.YYY",
-        vdesig: "SalesMan",
-        vcnum1: "8475859472",
-        vcnum2: "",
-        vemail: "xyz@gmail.com",
-        vgst: "",
-        vcreditterm: "30days",
-      },
-    ],
+export default {
+  data() {
+    return {
+      rows: [
+        {
+          vcode: "VC001",
+          vname: "ABC Pvt Ltd",
+          vaddress: "Trivandrum",
+          vstate: "Kerala",
+          vcontactperson: "Mr.XXX",
+          vdesig: "Manager",
+          vcnum1: "9876543219",
+          vcnum2: "0471224433",
+          vemail: "abcmanager@gmail.com",
+          vgst: "GSTIN1234567890123456",
+          vcreditterm: "Immediately",
+        },
+        {
+          vcode: "VC002",
+          vname: "XYZ Pvt Ltd",
+          vaddress: "Neyyatinkara",
+          vstate: "Kerala",
+          vcontactperson: "Mr.YYY",
+          vdesig: "SalesMan",
+          vcnum1: "8475859472",
+          vcnum2: "",
+          vemail: "xyz@gmail.com",
+          vgst: "",
+          vcreditterm: "30days",
+        },
+      ],
+    };
   },
-});
+};
 </script>
 
 <style scoped>
@@ -236,6 +249,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .table {
   width: fit-content;
   /*border-collapse: collapse;*/
+
   border: 2px solid #44475c;
   margin: 5px 5px 5px 5px;
 }
@@ -254,11 +268,11 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 5px;
   border-right: 2px solid #7d82a8;
 }
-/*
-.table td:last-child {
+
+/*.table td:last-child {
   border-right: none;
-}
+}*/
 .table tbody tr:nth-child(2n) td {
   background: #d4d8f9;
-}*/
+}
 </style>
