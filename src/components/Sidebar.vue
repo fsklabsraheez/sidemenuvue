@@ -11,7 +11,11 @@
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous"
       />
-      <router-link to="/" exact-active-class="active" class="side-btn">
+      <router-link
+        to="/vendorsupplier"
+        exact-active-class="active"
+        class="side-btn"
+      >
         <div class="link-container">
           <i class="fas fa-building"></i>
           Vendor / Supplier

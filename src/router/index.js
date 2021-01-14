@@ -2,7 +2,7 @@
 /*import VueRouter from 'vue-router' Added and removed */
 import { createRouter, createWebHistory } from 'vue-router'
 import dashboard from '../views/Dashboard' /*Dashboard to dashboard , removed .vue */
-import VendorSupplierNew from '../views/VendorSupplier.vue'
+/*import VendorSupplierNew from '../views/VendorSupplier.vue'*/
 import Customer from '../views/Customer.vue'
 
 /*Vue.use(VueRouter)  Added and removed */
@@ -13,12 +13,13 @@ const routes = [
       component: dashboard, /* Dashboard to dashboard */
         children: [
           {
-            path: '', /* / removed from all path - which has no impact, and components changed to component which s d major issue,  and .vue added which is working with or without vue*/
+            path: '/vendorsupplier', /* / removed from all path - which has no impact, and components changed to component which s d major issue,  and .vue added which is working with or without vue*/
             component: () => import(/* webpackChunkName: "VendorSupplier" */ '../views/VendorSupplierNew')
           },
-           {path: '/vendorsupplier',
-           component: VendorSupplierNew,
-            /*children: [
+           /*{
+             path: '/vendorsupplier',
+             component: VendorSupplierNew,
+            children: [
               {
                 path: '/vendorsupplier/addvendor',
                 component: () => import ('../views/VendorAdd.vue')
@@ -35,7 +36,7 @@ const routes = [
                 path: '/vendorsupplier/deletevendor',
                 component: () => import ('../views/VendorDelete.vue')
               }
-            ]*/},
+            ]},*/
           {
             path: 'customer',
             component: () => import(/* webpackChunkName: "Customer" */ '../views/Customer')
