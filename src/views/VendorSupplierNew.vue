@@ -108,7 +108,7 @@
               <button>
                 <span class="glyphicon glyphicon-edit"></span>Edit
               </button>
-              <button @click="deleteVendor">
+              <button @click="deleteVendor(index)">
                 <span class="glyphicon glyphicon-trash"></span> Delete
               </button>
             </td>
@@ -184,8 +184,8 @@ export default {
       this.vgst = "";
       this.vcreditterm = "";
     },
-    deleteVendor() {
-      this.rows.splice;
+    deleteVendor(index) {
+      this.rows.splice(index, 1);
     },
   },
 };
