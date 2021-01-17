@@ -30,6 +30,7 @@ export default {
 }
 .content {
   position: relative;
+
   background-color: white;
   border-radius: 20px;
   /*border-top-left-radius: 20px;

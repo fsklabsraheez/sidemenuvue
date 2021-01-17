@@ -1,21 +1,20 @@
 <template>
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous"
+  />
   <div>
     <!-- class="sidebar">-->
     <img src="@/assets/logo.png" alt="" />
     <div class="title">ERP</div>
     <div class="menu-items">
       <!-- Inside div is the menu items name-->
-      <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-        crossorigin="anonymous"
-      />
-      <router-link
-        to="/vendorsupplier"
-        exact-active-class="active"
-        class="side-btn"
-      >
+      <router-link to="/" exact-active-class="active" class="home-btn">
+        <i class="fas fa-home"></i>
+      </router-link>
+      <router-link to="/vendorsupplier" active-class="active" class="side-btn">
         <div class="link-container">
           <i class="fas fa-building"></i>
           Vendor / Supplier
@@ -69,7 +68,7 @@ export default {};
   font-size: 30px;
   letter-spacing: 1rem;
   font-weight: bold;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 img {
   max-width: 100%;
@@ -126,6 +125,28 @@ img {
   border-top-left-radius: 50px;
   text-decoration: none;
   text-align: center;
+}
+.home-btn {
+  border: none;
+  color: white;
+  margin: 10px 0px;
+  font-size: 25px;
+  text-align: right;
+
+  /*border-radius: 50%;
+  padding: 5px 5px;
+    background-color: white;*/
+}
+.home-btn.active {
+  animation: mymove 3s infinite;
+}
+@keyframes mymove {
+  from {
+    color: skyblue;
+  }
+  to {
+    color: blue;
+  }
 }
 .menu-items i {
   margin-right: 5px;
