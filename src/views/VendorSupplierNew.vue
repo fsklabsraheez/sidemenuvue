@@ -1,4 +1,8 @@
 <template>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+  />
   <div class="list-view">
     <div class="input-layout">
       <label>Vendor Code </label>
@@ -62,19 +66,35 @@
       </select>
     </div>
     <div>
-      <button @click="addVendor" class="button btnadd">Save Vendor</button>
+      <button @click="addVendor()" class="button btnadd">Save Vendor</button>
+    </div>
+  </div>
+  <div id="search">
+    <div class="searchsection">
+      <input
+        type="text"
+        name="searchvendorcode"
+        id="searchvendorcode"
+        v-model="searchcode"
+        @keyup="searchVendorbyCode()"
+        placeholder="Search by Code"
+      />
+      <i class="glyphicon glyphicon-search"></i>
+      <!--p>Searching content : {{ searchcode }}</p-->
+
+      <input
+        type="text"
+        name="searchvendorname"
+        id="searchvendorname"
+        v-model="searchname"
+        @keyup="searchVendorbyName()"
+        placeholder="Search by Name"
+      />
+      <i class="glyphicon glyphicon-search"></i>
+      <!--p>Searching content : {{ searchname }}</p-->
     </div>
   </div>
   <div class="displaysection">
-    <form action="" class="gridbutton">
-      <div>
-        <input type="text" name="search" id="search" v-model="search" />
-        <button>Search by Vendor Code</button> (or)
-        <input type="text" name="search" id="search" v-model="search" />
-        <button>Search by Vendor Name</button>
-      </div>
-    </form>
-
     <div class="table">
       <table id="vendorTable">
         <thead>
@@ -102,14 +122,11 @@
             <td>{{ vendor.contactperson }}</td>
             <td>{{ vendor.desig }}</td>
             <td>{{ vendor.cnum1 }}</td>
-            <td>{{ vendor.vcnum2 }}</td>
+            <td>{{ vendor.cnum2 }}</td>
             <td>{{ vendor.email }}</td>
             <td>{{ vendor.gst }}</td>
             <td>{{ vendor.creditterm }}</td>
-            <link
-              rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
-            />
+
             <td>
               <button @click="editVendor(index)" class="iconbutton">
                 <span class="glyphicon glyphicon-edit"></span>
@@ -131,7 +148,10 @@ export default {
   data() {
     return {
       vendor: {},
-      rows: [
+      searchname: "",
+      searchcode: "",
+
+      initialdata: [
         {
           code: "VC001",
           name: "ABC Pvt Ltd",
@@ -143,55 +163,37 @@ export default {
           cnum2: "0471224433",
           email: "abcmanager@gmail.com",
           gst: "GSTIN1234567890123456",
-          creditterm: "Immediately",
+          creditterm: "Immediate Payment",
         },
         {
           code: "VC002",
           name: "XYZ Pvt Ltd",
           address: "Neyyatinkara",
-          state: "Kerala",
+          state: "Tamil Nadu",
           contactperson: "Mr.YYY",
           desig: "SalesMan",
           cnum1: "8475859472",
           cnum2: "",
           email: "xyz@gmail.com",
           gst: "",
-          creditterm: "30days",
+          creditterm: "30 days",
         },
       ],
+      rows: this.initialdata,
     };
   },
+
   methods: {
     addVendor() {
-      this.rows.push({
-        code: this.vendor.code,
-        name: this.vendor.name,
-        address: this.vendor.address,
-        state: this.vendor.state,
-        contactperson: this.vendor.contactperson,
-        desig: this.vendor.desig,
-        cnum1: this.vendor.cnum1,
-        cnum2: this.vendor.cnum2,
-        email: this.vendor.email,
-        gst: this.vendor.gst,
-        creditterm: this.vendor.creditterm,
-      });
-      this.clearForm();
+      this.rows.push(this.vendor);
+      this.vendor = {};
+      //this.rows[index] = JSON.parse(JSON.stringify(this.rows[index]));
     },
-    clearForm() {
-      this.vendor.code = "";
-      this.vendor.name = "";
-      this.vendor.address = "";
-      this.vendor.state = "";
-      this.vendor.contactperson = "";
-      this.vendor.desig = "";
-      this.vendor.cnum1 = "";
-      this.vendor.cnum2 = "";
-      this.vendor.email = "";
-      this.vendor.gst = "";
-      this.vendor.creditterm = "";
+
+    editVendor(index) {
+      this.vendor = JSON.parse(JSON.stringify(this.rows[index]));
+      //this.vendor = this.rows[index];
     },
-    editVendor() {},
 
     deleteVendor(index) {
       var delconfirmation = confirm("Are you sure to delete this vendor ?");
@@ -199,6 +201,20 @@ export default {
         this.rows.splice(index, 1);
       }
     },
+    searchVendorbyCode() {
+      this.rows = this.initialdata.filter((vendor) =>
+        vendor.code.toLowerCase().includes(this.searchcode.toLowerCase())
+      );
+    },
+    searchVendorbyName() {
+      this.rows = this.initialdata.filter((vendor) =>
+        vendor.name.toLowerCase().includes(this.searchname.toLowerCase())
+      );
+    },
+  },
+  created() {
+    this.searchVendorbyCode();
+    this.searchVendorbyName();
   },
 };
 </script>
@@ -289,9 +305,8 @@ input[type="number"]::-webkit-inner-spin-button {
   position: relative;
 }
 .table {
-  width: fit-content;
   /*border-collapse: collapse;*/
-
+  width: fit-content;
   border: 2px solid #44475c;
   margin: 5px 5px 5px 5px;
 }
@@ -302,13 +317,15 @@ input[type="number"]::-webkit-inner-spin-button {
   background: #44475c;
   color: #fff;
   padding: 3px;
-  min-width: 30px;
+  min-width: 40px;
 }
 
 .table td {
   text-align: left;
   padding: 5px;
   border-right: 2px solid #7d82a8;
+  word-wrap: break-word;
+  max-width: 140px;
 }
 
 /*.table td:last-child {
@@ -316,5 +333,22 @@ input[type="number"]::-webkit-inner-spin-button {
 }*/
 .table tbody tr:nth-child(2n) td {
   background: #d4d8f9;
+}
+
+.searchsection {
+  display: grid;
+  grid-template-columns: 1fr 0.1fr 1fr 0.1fr 5fr;
+  margin: 35px 20px 10px;
+}
+.searchsection input,
+.searchsection i {
+  border-right-style: none;
+  border-left-style: none;
+  border-top-style: none;
+  border-bottom-width: medium;
+  border-bottom-color: black;
+}
+.searchsection i {
+  margin-right: 35px;
 }
 </style>

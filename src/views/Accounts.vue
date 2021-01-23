@@ -1,66 +1,67 @@
 <template>
-  <div class="top-menu">
-    <router-link to="/" exact-active-class="active" class="menu-btn">
-      Bank Account
-    </router-link>
-    <router-link to="/" exact-active-class="active" class="menu-btn">
-      Cash Account
-    </router-link>
-    <router-link to="/" exact-active-class="active" class="menu-btn">
-      Payable
-    </router-link>
-    <router-link to="/" exact-active-class="active" class="menu-btn">
-      Receivable
-    </router-link>
-    <router-link to="/" exact-active-class="active" class="menu-btn">
-      Income
-    </router-link>
-    <router-link to="/" exact-active-class="active" class="menu-btn">
-      Expense
-    </router-link>
+  <div>
+    <h2>Language Search</h2>
+
+    <div>
+      <input
+        type="text"
+        v-model="searchname"
+        @keyup="handleSearch"
+        placeholder="Enter language"
+      />
+      <p>{{ searchname }}</p>
+    </div>
+    <table>
+      <thead>
+        <th>Language ID</th>
+        <th>Language Name</th>
+      </thead>
+      <tbody>
+        <tr v-for="(item, index) in languages" :key="index">
+          <!--<td>{{ item.id }}</td>
+          <td>{{ item.name }}</td-->
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div class="box-content"><AccountsAdd /></div>
 </template>
 
 <script>
-import AccountsAdd from "../views/AccountsAdd.vue";
 export default {
-  components: { AccountsAdd },
+  data() {
+    return {
+      searchname: "",
+      initialdata: [
+        { id: 1, name: "JS" },
+        { id: 2, name: "JQ" },
+        { id: 3, name: "C++" },
+      ],
+      languages: this.initialdata,
+    };
+  },
+  methods: {
+    handleSearch() {
+      this.languages = this.initialdata.filter((item) =>
+        item.name.toLowerCase().includes(this.searchname.toLowerCase())
+      );
+    },
+  },
+  created() {
+    this.handleSearch();
+  },
 };
 </script>
 
 <style  scoped>
-.top-menu {
-  margin: 20px 80px 0px;
-
-  padding: 20px 20px;
-  background-color: none;
-  display: flex;
-  flex-direction: row;
+#app {
+  width: 300px;
+  margin: 0 auto;
 }
-/*.menu-btn.active {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding: 15px;
-  margin: 0px 20px 0px 20px;
-  background-color: rgb(0, 0, 0);
-  color: blue;
-  border-radius: 10px;
-}*/
 
-/*.top-menu > * {
-  flex-basis: 10%;
-}*/
-.menu-btn {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 18px;
-  /*font-weight: bold;*/
-  padding: 15px;
-  margin: 0px auto 0px auto;
-  background-color: rgb(0, 0, 0);
-  color: white;
-  border-radius: 10px;
+#app h2 {
+  margin: 20px;
+  text-align: center;
 }
 </style>
