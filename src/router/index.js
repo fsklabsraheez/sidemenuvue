@@ -3,7 +3,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import dashboard from '../views/Dashboard' /*Dashboard to dashboard , removed .vue */
 /*import VendorSupplierNew from '../views/VendorSupplier.vue'*/
-import Customer from '../views/Customer.vue'
+// import CustomerNew from '../views/CustomerNew.vue'
 
 /*Vue.use(VueRouter)  Added and removed */
 
@@ -13,7 +13,7 @@ const routes = [
       component: dashboard, /* Dashboard to dashboard */
         children: [
           {
-            path: '/vendorsupplier', /* / removed from all path - which has no impact, and components changed to component which s d major issue,  and .vue added which is working with or without vue*/
+            path: '/vendor', /* / removed from all path - which has no impact, and components changed to component which s d major issue,  and .vue added which is working with or without vue*/
             component: () => import(/* webpackChunkName: "VendorSupplier" */ '../views/VendorSupplierNew')
           },
            /*{
@@ -39,29 +39,29 @@ const routes = [
             ]},*/
           {
             path: 'customer',
-            component: () => import(/* webpackChunkName: "Customer" */ '../views/Customer')
+            component: () => import(/* webpackChunkName: "Customer" */ '../views/CustomerNew')
           },
-          {path: '/customer',
-           component: Customer,
-            children: [
-              {
-                path: '/customer/addcustomer',
-                component: () => import ('../views/CustomerAdd.vue')
-              },
-              {
-                path: '/customer/editcustomer',
-                component: () => import ('../views/CustomerEdit.vue')
-              },
-              {
-                path: '/customer/viewcustomer',
-                component: () => import ('../views/CustomerView.vue')
-              },
-              {
-                path: '/customer/deletecustomer',
-                component: () => import ('../views/CustomerDelete.vue')
-              }
-            ]},
-          {
+          // {path: '/customer',
+          //  component: Customer,
+          //   children: [
+          //     {
+          //       path: '/customer/addcustomer',
+          //       component: () => import ('../views/CustomerAdd.vue')
+          //     },
+          //     {
+          //       path: '/customer/editcustomer',
+          //       component: () => import ('../views/CustomerEdit.vue')
+          //     },
+          //     {
+          //       path: '/customer/viewcustomer',
+          //       component: () => import ('../views/CustomerView.vue')
+          //     },
+          //     {
+          //       path: '/customer/deletecustomer',
+          //       component: () => import ('../views/CustomerDelete.vue')
+          //     }
+          //   ]},
+           {
             path: 'purchase',
             component: () => import(/* webpackChunkName: "Purchase" */ '../views/Purchase')
           },

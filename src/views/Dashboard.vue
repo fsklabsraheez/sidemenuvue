@@ -22,7 +22,7 @@ export default {
 <style>
 .dashboard {
   display: grid;
-
+  position: relative;
   grid-template-columns: 1fr 5fr; /* Note : Leftside sidebar 1fr and rest areas has 5fr */
   background-color: black;
   height: 100vh;
@@ -30,7 +30,8 @@ export default {
 }
 .content {
   position: relative;
-
+  width: 80vw;
+  height: 100% - 10px;
   background-color: white;
   border-radius: 20px;
   /*border-top-left-radius: 20px;

@@ -5,54 +5,42 @@
     integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous"
   />
-  <div>
+  <div class="sidebarcontainer">
     <!-- class="sidebar">-->
     <img src="@/assets/logo.png" alt="" />
     <div class="title">ERP</div>
     <div class="menu-items">
       <!-- Inside div is the menu items name-->
+
       <router-link to="/" exact-active-class="active" class="home-btn">
         <i class="fas fa-home"></i>
       </router-link>
-      <router-link to="/vendorsupplier" active-class="active" class="side-btn">
-        <div class="link-container">
-          <i class="fas fa-building"></i>
-          Vendor / Supplier
-        </div>
+
+      <router-link to="/vendor" active-class="active" class="side-btn">
+        <i class="fas fa-building"></i>
+        Vendor
       </router-link>
 
       <router-link to="/customer" active-class="active" class="side-btn">
-        <div class="link-container">
-          <i class="fas fa-user-friends"></i> Customer
-        </div>
+        <i class="fas fa-user-friends"></i> Customer
       </router-link>
-      <!--
-        Click for Purchase
-      </button>-->
+
       <router-link to="/purchase" active-class="active" class="side-btn">
-        <div class="link-container">
-          <i class="fas fa-shopping-cart"></i> Purchase
-        </div>
+        <i class="fas fa-shopping-cart"></i> Purchase
       </router-link>
       <router-link to="/inventory" active-class="active" class="side-btn">
-        <div class="link-container">
-          <i class="fas fa-prescription-bottle-alt"></i>
-          Inventory
-        </div>
+        <i class="fas fa-prescription-bottle-alt"></i>
+        Inventory
       </router-link>
 
       <router-link to="/sales" active-class="active" class="side-btn">
-        <div class="link-container">
-          <i class="fas fa-clipboard-list"></i>
-          Sales
-        </div>
+        <i class="fas fa-clipboard-list"></i>
+        Sales
       </router-link>
 
       <router-link to="/accounts" active-class="active" class="side-btn">
-        <div class="link-container">
-          <i class="fas fa-hand-holding-usd"></i>
-          Accounts
-        </div>
+        <i class="fas fa-hand-holding-usd"></i>
+        Accounts
       </router-link>
     </div>
   </div>
@@ -62,11 +50,15 @@
 export default {};
 </script>
 
-<style scoped>
+<style>
+.sidebarcontainer {
+  height: 70vh;
+  width: 15vw;
+}
 .title {
   color: white;
   font-size: 30px;
-  letter-spacing: 1rem;
+  letter-spacing: 5px;
   font-weight: bold;
   padding-bottom: 10px;
 }
@@ -78,11 +70,11 @@ img {
 .menu-items {
   display: flex;
   flex-direction: column;
-  margin-top: 10px; /* Top margin of the menu items section below ERP */
-  margin-left: 60px;
+  margin-top: 5px; /* Top margin of the menu items section below ERP */
+  margin-left: 30px;
 }
 .menu-items > * {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 /* This content is blocked to display
 .link-container {
@@ -100,17 +92,19 @@ img {
   outline: none;
 }
 .side-btn.active {
-  position: relative;
-  background-color: white; /* Noted for remove */
-  color: blue; /* Noted for remove */
-  font-weight: bold;
+  color: blue;
+  text-decoration: none;
+  /*position: relative;
+  background-color: white;*/ /* Noted for remove */
+
+  /*font-weight: bold;
   border-bottom-left-radius: 50px;
 
-  border-top-left-radius: 20px;
+  border-top-left-radius: 20px;*/
 }
-.side-btn.active::before {
+/*.side-btn.active::before {
   position: absolute;
-}
+}*/
 .side-btn {
   border: none;
   padding: 16px 0px; /* Noted for remove */
@@ -126,12 +120,26 @@ img {
   text-decoration: none;
   text-align: center;
 }
+/*.homeicon {
+  height: 40px;
+  width: 40px;
+  background-color: green;
+
+  align-items: center;
+  margin-left: 220px;
+}*/
 .home-btn {
+  margin-left: 50%;
+  height: 30px;
+  width: 30px;
   border: none;
-  color: white;
-  margin: 10px 0px;
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  padding: 7px 7px;
   font-size: 25px;
-  text-align: right;
+  right: 0px;
+  /*text-align: right;*/
 
   /*border-radius: 50%;
   padding: 5px 5px;
@@ -143,9 +151,11 @@ img {
 @keyframes mymove {
   from {
     color: skyblue;
+    background-color: blue;
   }
   to {
     color: blue;
+    background-color: skyblue;
   }
 }
 .menu-items i {
