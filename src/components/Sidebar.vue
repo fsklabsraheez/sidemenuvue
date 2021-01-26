@@ -50,31 +50,34 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .sidebarcontainer {
   height: 70vh;
   width: 15vw;
 }
 .title {
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   letter-spacing: 5px;
   font-weight: bold;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  margin-left: 20%;
 }
 img {
-  max-width: 100%;
+  max-width: 75%;
+  min-width: 75px;
   height: auto;
-  padding: 10px;
+  padding: 5px;
+  margin-left: 20%;
 }
 .menu-items {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+
   margin-top: 5px; /* Top margin of the menu items section below ERP */
   margin-left: 30px;
 }
 .menu-items > * {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 /* This content is blocked to display
 .link-container {
@@ -107,16 +110,16 @@ img {
 }*/
 .side-btn {
   border: none;
-  padding: 16px 0px; /* Noted for remove */
+  padding: 10px 0px; /* Noted for remove */
   /*cursor: pointer;*/
   color: black; /* button back color */
   font-size: 16px; /* Noted for remove */
   background-color: white; /* Noted  */
-  margin: 10px 0px;
+  margin: 8px 0px;
   text-transform: uppercase;
   font-weight: bold;
-  border-bottom-left-radius: 50px;
-  border-top-left-radius: 50px;
+  border-radius: 20px 0 0 80px;
+
   text-decoration: none;
   text-align: center;
 }
@@ -129,7 +132,7 @@ img {
   margin-left: 220px;
 }*/
 .home-btn {
-  margin-left: 50%;
+  margin-bottom: 8px;
   height: 30px;
   width: 30px;
   border: none;
@@ -138,8 +141,9 @@ img {
   border-radius: 50%;
   padding: 7px 7px;
   font-size: 25px;
-  right: 0px;
-  /*text-align: right;*/
+  margin-left: 40%;
+  /* align-content: center; */
+  /* text-align: center; */
 
   /*border-radius: 50%;
   padding: 5px 5px;

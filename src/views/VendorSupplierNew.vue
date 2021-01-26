@@ -102,9 +102,9 @@
     <div class="displaysection">
       <div class="table">
         <table id="vendorTable">
-          <thead>
+          <thead class="headerposition">
             <tr>
-              <th max-width="2px">Vendor Code</th>
+              <th>Vendor Code</th>
               <th>Vendor Name</th>
               <th>Vendor Address</th>
               <th>State</th>
@@ -120,7 +120,7 @@
           </thead>
           <tbody class="viewlimit">
             <tr v-for="(vendor, index) in rows" :key="index">
-              <td max-width="2px">{{ vendor.code }}</td>
+              <td>{{ vendor.code }}</td>
               <td>{{ vendor.name }}</td>
               <td>{{ vendor.address }}</td>
               <td>{{ vendor.state }}</td>
@@ -132,7 +132,7 @@
               <td>{{ vendor.gst }}</td>
               <td>{{ vendor.creditterm }}</td>
 
-              <td>
+              <td align-content: center>
                 <button @click="editVendor(index)" class="iconbutton">
                   <span class="glyphicon glyphicon-edit"></span>
                 </button>
@@ -192,7 +192,7 @@ export default {
           contactperson: "Mr.YYY",
           desig: "Supervisor",
           cnum1: "8475859472",
-          cnum2: "",
+          cnum2: "9876584750",
           email: "123@gmail.com",
           gst: "",
           creditterm: "90 days",
@@ -231,10 +231,49 @@ export default {
           contactperson: "Mr.KNHU",
           desig: "SalesMan",
           cnum1: "8475859472",
-          cnum2: "",
+          cnum2: "908659685",
           email: "xyz@gmail.com",
           gst: "",
           creditterm: "90 days",
+        },
+        {
+          code: "VC007",
+          name: "XYZ Pvt Ltd",
+          address: "Neyyatinkara",
+          state: "Tamil Nadu",
+          contactperson: "Mr.YYY",
+          desig: "SalesMan",
+          cnum1: "8475859472",
+          cnum2: "",
+          email: "xyz@gmail.com",
+          gst: "GSTIN09876543211",
+          creditterm: "30 days",
+        },
+        {
+          code: "VC008",
+          name: "123 Pvt Ltd",
+          address: "Kollam",
+          state: "Kerala",
+          contactperson: "Mr.YYY",
+          desig: "Supervisor",
+          cnum1: "8475859472",
+          cnum2: "9876584750",
+          email: "123@gmail.com",
+          gst: "",
+          creditterm: "90 days",
+        },
+        {
+          code: "VC009",
+          name: "JPL Pvt Ltd",
+          address: "Kaliakavilai",
+          state: "Tamil Nadu",
+          contactperson: "Mr.BIL",
+          desig: "Owner",
+          cnum1: "8475859472",
+          cnum2: "",
+          email: "jpl@gmail.com",
+          gst: "GSTIN12345678901",
+          creditterm: "30 days",
         },
       ],
       rows: this.initialdata,
@@ -297,7 +336,7 @@ export default {
 }
 .gridbutton input,
 .gridbutton button {
-  height: 30px;
+  height: 20px;
   font-size: 18px;
 }
 .gridbutton input {
@@ -309,15 +348,16 @@ export default {
 }
 
 .button {
-  height: 35px;
+  height: 25px;
   width: auto;
   border-radius: 30px;
   text-transform: uppercase;
-  border: 2px solid black;
-  box-shadow: 4px 4px 4px black;
-  font-size: 18px;
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px black;
+  font-size: 15px;
   font-weight: bold;
   cursor: pointer;
+  margin: 8px 0 0 30%;
   /*margin-top: 25px;*/
 }
 .iconbutton {
@@ -327,36 +367,41 @@ export default {
   background-color: transparent;
 }
 
-.btnadd {
+/* .btnadd {
   margin-left: 25%;
-}
+} */
 
 .input-layout {
   display: flex;
   align-items: center;
   flex-direction: row;
-  padding: 5px;
+  padding: 3px;
   margin: 0px 60px;
 }
 .input-layout label {
   margin-right: auto;
-  font-size: 18px;
+  font-size: 15px;
 }
 .input-layout input,
 .input-layout select {
   width: 250px;
-  height: 30px;
-  font-size: 18px;
-  border: 2px solid black;
+  height: 20px;
+  font-size: 13px;
+  border: 1px solid black;
   border-radius: 3px;
 }
 
 .input-layout textarea {
   width: 250px;
   height: 70px;
+  font-size: 13px;
+  border: 1px solid black;
+  border-radius: 3px;
+  /* width: 250px;
+  height: 70px;
   font-size: 18px;
   border: 2px solid black;
-  margin-left: 40px;
+  margin-left: 40px; */
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -379,6 +424,12 @@ input[type="number"]::-webkit-inner-spin-button {
   border: 2px solid #44475c;
   margin: 5px 5px 5px 5px;
 }
+/* .headerposition {
+   position: sticky; 
+  position: sticky;
+  top: 0;
+  z-index: 10;
+} */
 
 .table th {
   /*text-transform: uppercase;*/
@@ -386,17 +437,19 @@ input[type="number"]::-webkit-inner-spin-button {
   background: #44475c;
   color: #fff;
   padding: 3px;
-  min-width: 40px;
+  min-width: 20px;
+  font-size: 13px;
   /*position: fixed;*/
 }
 
 .table td {
   text-align: left;
-  padding: 5px;
+  padding-left: 3px;
   border-right: 2px solid #7d82a8;
   word-wrap: break-word;
   /*max-width: 140px;*/
   width: auto;
+  font-size: 12px;
 }
 
 /*.table td:last-child {
@@ -409,7 +462,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .searchsection {
   display: grid;
   grid-template-columns: 1fr 0.1fr 1fr 0.1fr 5fr;
-  margin: 35px 20px 10px;
+  margin: 15px 20px 0px;
 }
 .searchsection input,
 .searchsection i {
