@@ -17,29 +17,29 @@
       </router-link>
 
       <router-link to="/vendor" active-class="active" class="side-btn">
-        <i class="fas fa-building"></i>
+        <span><i class="fas fa-building"></i></span>
         Vendor
       </router-link>
 
       <router-link to="/customer" active-class="active" class="side-btn">
-        <i class="fas fa-user-friends"></i> Customer
+        <span><i class="fas fa-user-friends"></i></span> Customer
       </router-link>
 
       <router-link to="/purchase" active-class="active" class="side-btn">
-        <i class="fas fa-shopping-cart"></i> Purchase
+        <span><i class="fas fa-shopping-cart"></i></span> Purchase
       </router-link>
       <router-link to="/inventory" active-class="active" class="side-btn">
-        <i class="fas fa-prescription-bottle-alt"></i>
+        <span><i class="fas fa-prescription-bottle-alt"></i></span>
         Inventory
       </router-link>
 
       <router-link to="/sales" active-class="active" class="side-btn">
-        <i class="fas fa-clipboard-list"></i>
+        <span><i class="fas fa-clipboard-list"></i></span>
         Sales
       </router-link>
 
       <router-link to="/accounts" active-class="active" class="side-btn">
-        <i class="fas fa-hand-holding-usd"></i>
+        <span><i class="fas fa-hand-holding-usd"></i></span>
         Accounts
       </router-link>
     </div>
@@ -91,23 +91,6 @@ img {
   text-transform: uppercase;
 }
 */
-.side-btn:focus {
-  outline: none;
-}
-.side-btn.active {
-  color: blue;
-  text-decoration: none;
-  /*position: relative;
-  background-color: white;*/ /* Noted for remove */
-
-  /*font-weight: bold;
-  border-bottom-left-radius: 50px;
-
-  border-top-left-radius: 20px;*/
-}
-/*.side-btn.active::before {
-  position: absolute;
-}*/
 .side-btn {
   border: none;
   padding: 10px 0px; /* Noted for remove */
@@ -123,6 +106,26 @@ img {
   text-decoration: none;
   text-align: center;
 }
+.side-btn:hover {
+  border-right: 5px solid blue;
+  margin-left: 3px;
+}
+.side-btn.active {
+  color: blue;
+  text-decoration: none;
+  border-right: 5px solid blue;
+  /*position: relative;
+  background-color: white;*/ /* Noted for remove */
+
+  /*font-weight: bold;
+  border-bottom-left-radius: 50px;
+
+  border-top-left-radius: 20px;*/
+}
+/*.side-btn.active::before {
+  position: absolute;
+}*/
+
 /*.homeicon {
   height: 40px;
   width: 40px;
@@ -149,6 +152,10 @@ img {
   padding: 5px 5px;
     background-color: white;*/
 }
+.home-btn:hover {
+  border: 2px solid blue;
+  padding: 5px;
+}
 .home-btn.active {
   animation: mymove 3s infinite;
 }
@@ -163,6 +170,9 @@ img {
   }
 }
 .menu-items i {
-  margin-right: 5px;
+  margin-right: 10px;
+}
+.menu-items span {
+  color: brown;
 }
 </style>

@@ -318,7 +318,7 @@ export default {
 
 <style scoped>
 .container {
-  position: absolute;
+  position: relative;
   /* height: 100%; */
   width: 100%;
 }
@@ -328,8 +328,10 @@ export default {
   /*background-color: tan;*/
   text-align: left;
   margin: 25px 20px 5px 20px;
+  /* overflow-y: auto;
+  overflow-x: auto; */
 }
-.gridbutton {
+/* .gridbutton {
   display: grid;
   grid-template-columns: 4fr 1fr;
   margin: 20px 10px 5px 10px;
@@ -345,7 +347,7 @@ export default {
 .gridbutton button {
   width: auto;
   cursor: pointer;
-}
+} */
 
 .button {
   height: 25px;
@@ -385,7 +387,7 @@ export default {
 .input-layout input,
 .input-layout select {
   width: 250px;
-  height: 20px;
+  height: 25px;
   font-size: 13px;
   border: 1px solid black;
   border-radius: 3px;
@@ -413,6 +415,7 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 10px;
   height: 90%;
   overflow-y: auto;
+  /* overflow-x: auto; */
   /*position: relative;*/
 }
 
