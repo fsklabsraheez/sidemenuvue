@@ -66,8 +66,8 @@ const routes = [
             component: () => import(/* webpackChunkName: "Purchase" */ '../views/Purchase')
           },
           {
-            path: 'inventory',
-            component: () => import(/* webpackChunkName: "Purchase" */ '../views/Inventory')
+            path: '/product',
+            component: () => import(/* webpackChunkName: "Purchase" */ '../views/InventoryProduct')
           },
           {
             path: 'sales',

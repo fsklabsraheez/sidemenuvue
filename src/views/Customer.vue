@@ -78,9 +78,6 @@ export default {
   }
 }
 
-.top-menu > * {
-  /*flex-basis: 10%;*/
-}
 .menu-btn {
   text-decoration: none;
   text-transform: uppercase;
