@@ -311,6 +311,10 @@ export default {
   border-radius: 3px;
 }
 
+.input-layout select {
+  width: 255px;
+}
+
 .input-layout textarea {
   width: 250px;
   height: 70px;

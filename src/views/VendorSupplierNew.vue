@@ -400,6 +400,9 @@ export default {
   border: 1px solid black;
   border-radius: 3px;
 }
+.input-layout select {
+  width: 255px;
+}
 
 .input-layout textarea {
   width: 250px;
