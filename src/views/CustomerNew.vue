@@ -309,6 +309,7 @@ export default {
   font-size: 13px;
   border: 1px solid black;
   border-radius: 3px;
+  outline: none;
 }
 
 .input-layout select {
@@ -321,6 +322,7 @@ export default {
   font-size: 13px;
   border: 1px solid black;
   border-radius: 3px;
+  outline: none;
   /* width: 250px;
   height: 70px;
   font-size: 18px;
@@ -344,7 +346,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .table {
   /*border-collapse: collapse;*/
 
-  width: 75vw;
+  max-width: 75vw;
 
   border: 2px solid #44475c;
   margin: 5px 5px 5px 5px;
@@ -396,8 +398,12 @@ input[type="number"]::-webkit-inner-spin-button {
   border-top-style: none;
   border-bottom-width: medium;
   border-bottom-color: black;
+  outline: none;
 }
 .searchsection i {
   margin-right: 35px;
+  background-color: black;
+  color: white;
+  padding: 3px;
 }
 </style>

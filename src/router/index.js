@@ -70,6 +70,10 @@ const routes = [
             component: () => import(/* webpackChunkName: "Purchase" */ '../views/InventoryProduct')
           },
           {
+            path: 'warehouse',
+            component: () => import(/* webpackChunkName: "Purchase" */ '../views/InventoryWarehouse')
+          },
+          {
             path: 'sales',
             component: () => import(/* webpackChunkName: "Sales" */ '../views/Sales.vue')
           },

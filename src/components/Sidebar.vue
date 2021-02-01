@@ -78,11 +78,7 @@
             Stock
           </router-link>
 
-          <router-link
-            to="inventory/warehouse"
-            active-class="active"
-            class="side-subbtn"
-          >
+          <router-link to="warehouse" active-class="active" class="side-subbtn">
             Warehouse
           </router-link>
         </div>
