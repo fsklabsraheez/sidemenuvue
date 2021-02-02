@@ -3,7 +3,7 @@
     <div class="list-view">
       <div class="input-layout">
         <label>Inventory Location Type</label>
-        <select v-model="inventorylocationtype">
+        <select v-model="inventory.locationtype">
           <option disabled value="">Select the Vendor Code</option>
           <option>Shop</option>
           <option>Warehouse</option>
@@ -13,28 +13,28 @@
       <div class="input-layout">
         <label>Inventory Location Name </label>
         <input
-          v-model="inventorylocationname"
+          v-model="inventory.locationname"
           placeholder="Enter Name of Inventory Location"
         />
       </div>
       <div class="input-layout">
         <label>Address </label>
-        <textarea v-model="inventoryaddress" placeholder="Address"></textarea>
+        <textarea v-model="inventory.address" placeholder=""></textarea>
       </div>
       <div class="input-layout">
         <label>Incharge Name</label>
         <input
-          v-model="inventoryinchargename"
+          v-model="inventory.inchargename"
           placeholder="Enter Incharge Name"
         />
       </div>
       <div class="input-layout">
         <label>Warehouse Contact Number</label>
-        <input v-model.number="inventorycontactnumber" type="number" />
+        <input v-model.number="inventory.contactnumber" type="number" />
       </div>
       <div class="input-layout">
         <label>Email Id</label>
-        <input v-model="inventoryemailid" placeholder="Enter E-mail Id" />
+        <input v-model="inventory.emailid" placeholder="Enter E-mail Id" />
       </div>
     </div>
     <div>
@@ -64,16 +64,17 @@
               <th>Incharge Name</th>
               <th>Contact Number</th>
               <th>Email ID</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody class="viewlimit">
             <tr v-for="(inventory, index) in rows" :key="index">
-              <td>{{ inventorylocationtype }}</td>
-              <td>{{ inventorylocationname }}</td>
-              <td>{{ inventoryaddress }}</td>
-              <td>{{ inventoryinchargename }}</td>
-              <td>{{ inventorycontactnumber }}</td>
-              <td>{{ inventoryemailid }}</td>
+              <td>{{ inventory.locationtype }}</td>
+              <td>{{ inventory.locationname }}</td>
+              <td>{{ inventory.address }}</td>
+              <td>{{ inventory.inchargename }}</td>
+              <td>{{ inventory.contactnumber }}</td>
+              <td>{{ inventory.emailid }}</td>
               <td>
                 <span @click="editInventorylocation(index)" class="iconbutton"
                   ><i class="fas fa-pencil-alt"></i
@@ -92,20 +93,30 @@
 </template>
 
 
-<!--script>
+<script>
 export default {
   data() {
     return {
       inventory: {},
       searchlocationname: "",
-            initialdata: [{
-              locationtype : "shop",
-              locationname : "Warehouse001",
-              address :"Kaliakavilai",
-              inchargename : "Mr.FSSE"
-              contactnumber : 9876554445,
-              emailid:"yuyguyfytd",
-            }],
+      initialdata: [
+        {
+          locationtype: "shop",
+          locationname: "Retails Salt",
+          address: "Neyyatinkara",
+          inchargename: "Mr.FSSE",
+          contactnumber: 9876554445,
+          emailid: "shop@gmail.com",
+        },
+        {
+          locationtype: "warehouse",
+          locationname: "Warehouse-001",
+          address: "Amaravila",
+          inchargename: "Mr.GEST",
+          contactnumber: 7839273648,
+          emailid: "warehouse@gmail.com",
+        },
+      ],
       rows: this.initialdata,
     };
   },
@@ -137,7 +148,7 @@ export default {
     this.searchLocationname();
   },
 };
-</script-->
+</script>
 
 <style scoped>
 .container {
@@ -149,8 +160,9 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin: 30px 25px 20px;
+  margin: 30px 70px 20px;
 }
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -171,13 +183,18 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 230px;
   height: 20px;
   outline: none;
+  border-right-style: none;
+  border-left-style: none;
+  border-top-style: none;
 }
 
 .input-layout select {
   width: 235px;
+  border-bottom-width: 2px;
 }
 .input-layout textarea {
   height: 50px;
+  border-bottom-width: 2px;
 }
 
 .button {
@@ -197,7 +214,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .searchsection {
   display: grid;
   grid-template-columns: 1fr 0.1fr 1fr 0.1fr 5fr;
-  margin: 15px 20px 0px;
+  margin: 20px 70px 0px;
 }
 .searchsection input,
 .searchsection i {
@@ -215,16 +232,16 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 3px;
 }
 .displaysection {
-  position: absolute;
-
+  position: relative;
+  width: 95%;
   margin: 20px;
   height: 150%;
   overflow-y: auto;
   overflow-x: auto;
 }
 .table {
-  max-width: 75vw;
-
+  /* min-width: 50vw; */
+  width: fit-content;
   border: 2px solid #44475c;
   margin: 5px 50px;
 }
@@ -234,12 +251,14 @@ input[type="number"]::-webkit-inner-spin-button {
   background: #44475c;
   color: #fff;
   padding: 1px;
-  min-width: 150px;
+  min-width: 125px;
   font-size: 12px;
+  height: 23px;
 }
 .table td {
   font-size: 12px;
   padding: 2px 3px;
+  height: 20px;
 }
 .table tbody tr:nth-child(2n) td {
   background: #d4d8f9;

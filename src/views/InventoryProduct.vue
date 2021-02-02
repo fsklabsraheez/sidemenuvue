@@ -253,7 +253,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
-  margin: 30px 25px 20px;
+  margin: 50px 25px 20px;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -271,10 +271,14 @@ input[type="number"]::-webkit-inner-spin-button {
 .input-layout select {
   font-size: 13px;
   outline: none;
+  border-right-style: none;
+  border-left-style: none;
+  border-top-style: none;
 }
 
 .input-layout select {
-  width: 175px;
+  border-bottom-width: 2px;
+  /* width: 175px; */
 }
 
 .button {

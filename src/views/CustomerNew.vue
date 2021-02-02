@@ -35,7 +35,7 @@
         <label>Designation</label>
         <input
           v-model="customer.desig"
-          placeholder="Contact Person's Designation'"
+          placeholder="Contact Person's Designation"
         />
       </div>
       <div class="input-layout">
@@ -303,25 +303,29 @@ export default {
   font-size: 15px;
 }
 .input-layout input,
-.input-layout select {
+.input-layout select,
+.input-layout textarea {
   width: 250px;
   height: 25px;
   font-size: 13px;
-  border: 1px solid black;
-  border-radius: 3px;
+  /* border: 1px solid black;
+  border-radius: 3px; */
   outline: none;
+  border-right-style: none;
+  border-left-style: none;
+  border-top-style: none;
 }
 
 .input-layout select {
   width: 255px;
+  border-bottom-width: 2px;
 }
 
 .input-layout textarea {
-  width: 250px;
   height: 70px;
-  font-size: 13px;
-  border: 1px solid black;
-  border-radius: 3px;
+  border-bottom-width: 2px;
+  /* border: 1px solid black;
+  border-radius: 3px; */
   outline: none;
   /* width: 250px;
   height: 70px;
