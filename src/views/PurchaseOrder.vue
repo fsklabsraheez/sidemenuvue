@@ -188,13 +188,17 @@
               <th>Date</th>
               <th>Vendor Code</th>
               <th>Vendor Name</th>
-              <th>Item Code</th>
-              <th>Item Description</th>
-              <th>Price</th>
-              <th>GST</th>
-              <th>Qty Ordered</th>
-              <th>Amount</th>
-              <th>Actions</th>
+              <th>
+                <tr>
+                  <th>Item Code</th>
+                  <th>Item Description</th>
+                  <th>Price</th>
+                  <th>GST</th>
+                  <th>Qty Ordered</th>
+                  <th>Amount</th>
+                  <th>Actions</th>
+                </tr>
+              </th>
             </tr>
           </thead>
           <tbody class="viewlimit">
@@ -203,20 +207,24 @@
               <td>{{ po.date }}</td>
               <td>{{ po.vendorcode }}</td>
               <td>{{ po.vendorname }}</td>
-              <td>{{ po.poitems.itemcode }}</td>
-              <td>{{ po.poitems.itemdescription }}</td>
-              <td>{{ po.poitems.itemprice }}</td>
-              <td>{{ po.poitems.itemgst }}</td>
-              <td>{{ po.poitems.qtyordered }}</td>
-              <td>{{ po.poitems.itemprice * poitems.qtyordered }}</td>
               <td>
-                <span @click="editPO(index)" class="iconbutton"
-                  ><i class="fas fa-pencil-alt"></i
-                ></span>
+                <tr v-for="(poitem, index2) in po.poitems" :key="index2">
+                  <td>{{ poitem.itemcode }}</td>
+                  <td>{{ poitem.itemdescription }}</td>
+                  <td>{{ poitem.itemprice }}</td>
+                  <td>{{ poitem.itemgst }}</td>
+                  <td>{{ poitem.qtyordered }}</td>
+                  <td>{{ poitem.itemprice * poitem.qtyordered }}</td>
+                  <td>
+                    <span @click="editPO(index)" class="iconbutton"
+                      ><i class="fas fa-pencil-alt"></i
+                    ></span>
 
-                <span @click="deletePO(index)" class="iconbutton"
-                  ><i class="fas fa-trash"></i
-                ></span>
+                    <span @click="deletePO(index)" class="iconbutton"
+                      ><i class="fas fa-trash"></i
+                    ></span>
+                  </td>
+                </tr>
               </td>
             </tr>
           </tbody>
@@ -445,21 +453,31 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-left: auto;
   margin-right: auto;
 }
-.table th {
+.table th,
+.table td {
   /* border: 2px solid #474a5c; */
   text-align: center;
-  background: #44475c;
+
   color: #fff;
   padding: 1px;
-  min-width: 60px;
+  min-width: 80px;
+  max-width: 600px;
   font-size: 12px;
   height: 23px;
+  word-wrap: break-word;
+}
+.table th {
+  background: #44475c;
 }
 .table td {
-  font-size: 12px;
-  padding: 2px 3px;
-  height: 20px;
+  color: black;
 }
+/* .table td {
+  font-size: 12px;
+  padding: 1px;
+  height: 20px;
+  min-width: 60px;
+} */
 .table tbody tr:nth-child(2n) td {
   background: #d4d8f9;
 }
