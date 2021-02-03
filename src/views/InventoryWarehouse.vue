@@ -36,6 +36,14 @@
         <label>Email Id</label>
         <input v-model="inventory.emailid" placeholder="Enter E-mail Id" />
       </div>
+      <!-- <div class="input-layout">
+        <label>Date</label>
+        <input
+          type="date"
+          v-model="inventory.date"
+          placeholder="Enter E-mail Id"
+        />
+      </div> -->
     </div>
     <div>
       <button @click="addInventorylocation()" class="button btnadd">
