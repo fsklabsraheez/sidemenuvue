@@ -237,7 +237,9 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-right: 35px;
   background-color: black;
   color: white;
-  padding: 3px;
+  padding: 5px;
+  border-radius: 50%;
+  margin-left: -10px;
 }
 .displaysection {
   position: relative;
