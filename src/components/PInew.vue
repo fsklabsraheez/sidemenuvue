@@ -30,6 +30,10 @@
 
         <input type="text" v-model="PI.vendorname" />
       </div>
+      <div class="input-layout">
+        <label>Credit Terms</label>
+        <input type="" placeholder="Approved credit period" />
+      </div>
     </div>
     <div class="item-list">
       <!-- <select v-model="PI.itemcode">
@@ -116,6 +120,23 @@
         </table> -->
     </div>
     <div class="footer-section">
+      <label>Select Payment Status</label>
+      <select v-model="PI.paymentstatus">
+        <option disabled value="">Select the Payment Status</option>
+        <option>Partially paid</option>
+        <option>Fully Paid</option>
+        <option>On Credit</option>
+      </select>
+
+      <label>Payment Type</label>
+      <select v-model="PI.paymenttype">
+        <option disabled value="">Select the Payment Type</option>
+        <option>Cash Payment</option>
+        <option>Cheque Payment</option>
+        <option>UPI Payment</option>
+        <option>Bank Transfer</option>
+      </select>
+
       <label> Grand Total : </label>
       <label>Rs {{ total }} </label>
       <button @click="addPI()" class="button">
@@ -468,20 +489,38 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .footer-section {
   position: absolute;
-  right: 80px;
+  display: flex;
 
-  margin-top: 15px;
+  /* right: 80px; */
+
+  margin-top: 25px;
 }
-.footer-section label {
+.footer-section label,
+.footer-section select {
   font-size: 15px;
   font-weight: bold;
+  height: 20px;
+  outline: none;
+  border-right-style: none;
+  border-left-style: none;
+  border-top-style: none;
+  margin-right: 10px;
 }
+.footer-section select {
+  width: 150px;
+  margin-right: 40px;
+}
+
 .footer-section button {
   /* Position: relative; */
   /* margin-left: -120%; */
   margin-left: 20px;
+  margin-top: -5px;
 }
 .footer-section button:hover {
   color: green;
+}
+.footer-section .input-layout {
+  /* margin-right: 250px; */
 }
 </style>

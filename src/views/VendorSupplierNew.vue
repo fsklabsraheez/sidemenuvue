@@ -433,7 +433,7 @@ input[type="number"]::-webkit-inner-spin-button {
   position: absolute;
   /*background-color: burlywood;*/
   margin: 10px;
-  height: 90%;
+  height: 80%;
   overflow-y: auto;
   /* overflow-x: auto; */
   /*position: relative;*/
