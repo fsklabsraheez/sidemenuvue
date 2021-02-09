@@ -2,7 +2,7 @@
   <!-- <div id="app"> -->
   <div>
     <TabNav
-      :tabs="['New PO', 'View PO', 'Dummy']"
+      :tabs="['New PO', 'View PO', 'Dummy1', 'Dummy2']"
       :selected="selected"
       @selected="setSelected"
     >
