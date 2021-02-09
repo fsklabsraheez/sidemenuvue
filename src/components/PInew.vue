@@ -520,7 +520,4 @@ input[type="number"]::-webkit-inner-spin-button {
 .footer-section button:hover {
   color: green;
 }
-.footer-section .input-layout {
-  /* margin-right: 250px; */
-}
 </style>

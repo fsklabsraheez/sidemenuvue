@@ -111,14 +111,24 @@
           </router-link>
         </div>
       </div>
-      <div class="accountsmenu">
-        <li active-class="active" class="side-btn">
+      <div class="singlemenu">
+        <router-link
+          to="/Accounts"
+          active-class="active"
+          class="single-side-btn"
+        >
+          <span><i class="fas fa-hand-holding-usd"></i></span>
+          Accounts
+        </router-link>
+      </div>
+
+      <!--<li active-class="active" class="side-btn">
           <span><i class="fas fa-hand-holding-usd"></i></span>
           Accounts
           <span class="arrow"><i class="fas fa-chevron-circle-down"></i></span>
         </li>
 
-        <div class="submenu4">
+         <div class="submenu4">
           <router-link
             to="/bankaccount"
             active-class="active"
@@ -149,9 +159,8 @@
           </router-link>
           <router-link to="/expense" active-class="active" class="side-subbtn">
             Expense
-          </router-link>
-        </div>
-      </div>
+          </router-link> 
+        </div>-->
     </div>
   </div>
 </template>

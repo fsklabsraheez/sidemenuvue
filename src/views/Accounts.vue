@@ -1,67 +1,69 @@
 <template>
+  <!-- <div id="app"> -->
   <div>
-    <h2>Language Search</h2>
-
-    <div>
-      <input
-        type="text"
-        v-model="searchname"
-        @keyup="handleSearch"
-        placeholder="Enter language"
-      />
-      <p>{{ searchname }}</p>
-    </div>
-    <table>
-      <thead>
-        <th>Language ID</th>
-        <th>Language Name</th>
-      </thead>
-      <tbody>
-        <tr v-for="(item, index) in languages" :key="index">
-          <!--<td>{{ item.id }}</td>
-          <td>{{ item.name }}</td-->
-          <td>{{ item.id }}</td>
-          <td>{{ item.name }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <TabNav
+      :tabs="[
+        'Bank Account',
+        'Cash Account',
+        'Payable',
+        'Receivable',
+        'Income',
+        'Expense',
+      ]"
+      :selected="selected"
+      @selected="setSelected"
+    >
+      <Tab :isSelected="selected === 'Bank Account'">
+        <BankAccount />
+      </Tab>
+      <Tab :isSelected="selected === 'Cash Account'">
+        <CashAccount />
+      </Tab>
+      <Tab :isSelected="selected === 'Payable'">
+        <Payable />
+      </Tab>
+      <Tab :isSelected="selected === 'Receivable'">
+        <Receivable />
+      </Tab>
+      <Tab :isSelected="selected === 'Income'">
+        <Income />
+      </Tab>
+      <Tab :isSelected="selected === 'Expense'">
+        <Expense />
+      </Tab>
+    </TabNav>
   </div>
 </template>
 
 <script>
+import BankAccount from "../components/BankAccount.vue";
+import CashAccount from "../components/CashAccount.vue";
+import Payable from "../components/Payable.vue";
+import Receivable from "../components/Receivable.vue";
+import Income from "../components/Income.vue";
+import Expense from "../components/Expense.vue";
+import TabNav from "../components/TabNav.vue";
+import Tab from "../components/Tab.vue";
 export default {
+  components: {
+    TabNav,
+    Tab,
+    BankAccount,
+    CashAccount,
+    Payable,
+    Receivable,
+    Income,
+    Expense,
+  },
   data() {
     return {
-      searchname: "",
-      initialdata: [
-        { id: 1, name: "JS" },
-        { id: 2, name: "JQ" },
-        { id: 3, name: "C++" },
-      ],
-      languages: this.initialdata,
+      selected: "Payable",
     };
   },
   methods: {
-    handleSearch() {
-      this.languages = this.initialdata.filter((item) =>
-        item.name.toLowerCase().includes(this.searchname.toLowerCase())
-      );
+    setSelected(tab) {
+      this.selected = tab;
     },
-  },
-  created() {
-    this.handleSearch();
   },
 };
 </script>
-
-<style  scoped>
-#app {
-  width: 300px;
-  margin: 0 auto;
-}
-
-#app h2 {
-  margin: 20px;
-  text-align: center;
-}
-</style>
