@@ -82,8 +82,12 @@ const routes = [
             component: () => import(/* webpackChunkName: "Purchase" */ '../views/InventoryWarehouse')
           },
           {
-            path: 'sales',
-            component: () => import(/* webpackChunkName: "Sales" */ '../views/Sales.vue')
+            path: '/salesorder',
+            component: () => import(/* webpackChunkName: "Sales" */ '../views/SalesOrder.vue')
+          },
+          {
+            path: '/salesinvoice',
+            component: () => import(/* webpackChunkName: "Sales" */ '../views/SalesInvoice.vue')
           },
           {
             path: 'accounts',
