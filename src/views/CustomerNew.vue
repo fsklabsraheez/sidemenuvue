@@ -412,4 +412,12 @@ input[type="number"]::-webkit-inner-spin-button {
   border-radius: 50%;
   margin-left: -10px;
 }
+.input-layout input:focus,
+.input-layout select:focus,
+.input-layout textarea:focus {
+  border-color: black;
+}
+.searchsection input:focus {
+  background-color: whitesmoke;
+}
 </style>

@@ -241,10 +241,10 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 235px;
   border-bottom-width: 2px;
 }
-/* .input-layout textarea {
-  height: 50px;
+.input-layout textarea {
+  /* height: 50px; */
   border-bottom-width: 2px;
-} */
+}
 
 .button {
   height: 25px;
@@ -330,5 +330,14 @@ input[type="number"]::-webkit-inner-spin-button {
 .iconbutton i:hover {
   color: blue;
   font-size: 13px;
+}
+.input-layout input:focus,
+.input-layout select:focus,
+.input-layout textarea:focus,
+.item-list input:focus {
+  border-color: black;
+}
+.searchsection input:focus {
+  background-color: whitesmoke;
 }
 </style>

@@ -405,6 +405,7 @@ export default {
   border-left-style: none;
   border-top-style: none;
 }
+
 .input-layout select {
   width: 255px;
 }
@@ -495,7 +496,9 @@ input[type="number"]::-webkit-inner-spin-button {
   border-bottom-width: medium;
   border-bottom-color: black;
   outline: none;
+  text-align: center;
 }
+
 .searchsection i {
   margin-right: 35px;
   background-color: black;
@@ -503,5 +506,13 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 5px;
   border-radius: 50%;
   margin-left: -10px;
+}
+.input-layout input:focus,
+.input-layout select:focus,
+.input-layout textarea:focus {
+  border-color: black;
+}
+.searchsection input:focus {
+  background-color: whitesmoke;
 }
 </style>

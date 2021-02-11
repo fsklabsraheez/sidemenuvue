@@ -284,4 +284,13 @@ input[type="number"]::-webkit-inner-spin-button {
   color: blue;
   font-size: 13px;
 }
+.input-layout input:focus,
+.input-layout select:focus,
+.input-layout textarea:focus,
+.item-list input:focus {
+  border-color: black;
+}
+.searchsection input:focus {
+  background-color: whitesmoke;
+}
 </style>

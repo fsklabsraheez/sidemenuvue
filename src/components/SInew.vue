@@ -451,7 +451,7 @@ input[type="number"]::-webkit-inner-spin-button {
   border-left-style: none;
   border-top-style: none;
   border-bottom-width: medium;
-  border-bottom-color: black;
+  /* border-bottom-color: black; */
   outline: none;
   margin: 5px 10px 15px;
   width: 75px;
@@ -519,5 +519,11 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .footer-section button:hover {
   color: green;
+}
+.input-layout input:focus,
+.input-layout select:focus,
+.input-layout textarea:focus,
+.item-list input:focus {
+  border-color: black;
 }
 </style>

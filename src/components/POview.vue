@@ -478,5 +478,9 @@ input[type="number"]::-webkit-inner-spin-button {
   color: blue;
   font-size: 13px;
 }
+
+.searchsection input:focus {
+  background-color: whitesmoke;
+}
 </style>
 

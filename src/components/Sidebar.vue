@@ -70,11 +70,7 @@
           <router-link to="product" active-class="active" class="side-subbtn">
             Product
           </router-link>
-          <router-link
-            to="inventory/stock"
-            active-class="active"
-            class="side-subbtn"
-          >
+          <router-link to="stock" active-class="active" class="side-subbtn">
             Stock
           </router-link>
 
