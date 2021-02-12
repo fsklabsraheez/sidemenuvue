@@ -505,6 +505,7 @@ input[type="number"]::-webkit-inner-spin-button {
   border-left-style: none;
   border-top-style: none;
   margin-right: 10px;
+  border-bottom-width: 2px;
 }
 .footer-section select {
   width: 150px;
@@ -523,7 +524,13 @@ input[type="number"]::-webkit-inner-spin-button {
 .input-layout input:focus,
 .input-layout select:focus,
 .input-layout textarea:focus,
-.item-list input:focus {
+.item-list input:focus,
+.footer-section select:focus {
   border-color: black;
+}
+.button:focus,
+.button:hover {
+  box-shadow: 5px 5px 10px green;
+  color: brown;
 }
 </style>

@@ -2,14 +2,14 @@
   <!-- <div id="app"> -->
   <div>
     <TabNav
-      :tabs="['New PO', 'View PO']"
+      :tabs="['New Purchase Order', 'View Purchase Order']"
       :selected="selected"
       @selected="setSelected"
     >
-      <Tab :isSelected="selected === 'New PO'">
+      <Tab :isSelected="selected === 'New Purchase Order'">
         <POnew />
       </Tab>
-      <Tab :isSelected="selected === 'View PO'">
+      <Tab :isSelected="selected === 'View Purchase Order'">
         <POview />
       </Tab>
     </TabNav>
@@ -25,7 +25,7 @@ export default {
   components: { TabNav, Tab, POnew, POview },
   data() {
     return {
-      selected: "New PO",
+      selected: "New Purchase Order",
     };
   },
   methods: {

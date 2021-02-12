@@ -2,14 +2,14 @@
   <!-- <div id="app"> -->
   <div>
     <TabNav
-      :tabs="['New PI', 'View PI']"
+      :tabs="['New Purchase Invoice', 'View Purchase Invoice']"
       :selected="selected"
       @selected="setSelected"
     >
-      <Tab :isSelected="selected === 'New PI'">
+      <Tab :isSelected="selected === 'New Purchase Invoice'">
         <PInew />
       </Tab>
-      <Tab :isSelected="selected === 'View PI'">
+      <Tab :isSelected="selected === 'View Purchase Invoice'">
         <PIview />
       </Tab>
     </TabNav>
@@ -25,7 +25,7 @@ export default {
   components: { TabNav, Tab, PInew, PIview },
   data() {
     return {
-      selected: "New PI",
+      selected: "New Purchase Invoice",
     };
   },
   methods: {

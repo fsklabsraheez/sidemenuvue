@@ -361,6 +361,7 @@ export default {
   font-weight: bold;
   cursor: pointer;
   margin: 8px 0 0 30%;
+  outline: none;
   /*margin-top: 25px;*/
 }
 .iconbutton {
@@ -514,5 +515,10 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .searchsection input:focus {
   background-color: whitesmoke;
+}
+.button:focus,
+.button:hover {
+  box-shadow: 5px 5px 10px green;
+  color: brown;
 }
 </style>

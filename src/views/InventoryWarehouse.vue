@@ -293,4 +293,9 @@ input[type="number"]::-webkit-inner-spin-button {
 .searchsection input:focus {
   background-color: whitesmoke;
 }
+.button:focus,
+.button:hover {
+  box-shadow: 5px 5px 10px green;
+  color: brown;
+}
 </style>

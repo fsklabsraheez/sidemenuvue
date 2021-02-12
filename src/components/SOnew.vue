@@ -486,4 +486,9 @@ input[type="number"]::-webkit-inner-spin-button {
 .item-list input:focus {
   border-color: black;
 }
+.button:focus,
+.button:hover {
+  box-shadow: 5px 5px 10px green;
+  color: brown;
+}
 </style>
