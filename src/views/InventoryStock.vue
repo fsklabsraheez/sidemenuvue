@@ -16,7 +16,7 @@
         <StockNew />
       </Tab>
       <Tab :isSelected="selected === 'View Stock'">
-        <!-- <POview /> -->
+        <StockView />
       </Tab>
       <Tab :isSelected="selected === 'Stock Transfer'"></Tab>
       <Tab :isSelected="selected === 'Stock Adjustment'"></Tab>
@@ -27,11 +27,12 @@
 
 <script>
 import StockNew from "../components/StockNew.vue";
+import StockView from "../components/StockView.vue";
 // import POview from "../components/POview.vue";
 import TabNav from "../components/TabNav.vue";
 import Tab from "../components/Tab.vue";
 export default {
-  components: { TabNav, Tab, StockNew },
+  components: { TabNav, Tab, StockNew, StockView },
   data() {
     return {
       selected: "New Stock",
